@@ -2,7 +2,17 @@ import React from 'react';
 
 function Reservations() {
   return (
-    <div>Here goes list of My Reservations</div>
+    <div>
+      <h1> Here goes list of My Reservations</h1>
+      <p>
+        Implement mapStateToProps and
+        <br />
+        mapDispatchToProps here
+        {' '}
+        <br />
+        to connect the app with the redux store
+      </p>
+    </div>
   );
 }
 
