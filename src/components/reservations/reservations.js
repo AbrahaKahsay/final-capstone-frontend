@@ -2,7 +2,7 @@ import React from 'react';
 
 function Reservations() {
   return (
-    <div>Reservations</div>
+    <div>Here goes list of My Reservations</div>
   );
 }
 
