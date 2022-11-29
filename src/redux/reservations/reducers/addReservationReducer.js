@@ -31,3 +31,5 @@ const reservations = (state = initialstate, action) => {
       };
   }
 };
+
+export default reservations
