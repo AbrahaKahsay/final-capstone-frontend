@@ -1,19 +1,26 @@
-import React from 'react';
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { removeReservation } from '../../redux/reservations/reservations'
 
-function Reservations() {
+const Reservation = ({model , city, date, id, photo }) => {
+  const dispatch = useDispatch()
+
+    const handleDelete=()=>{
+      dispatch(removeReservation(id))
+    }
   return (
     <div>
-      <h1> Here goes list of My Reservations</h1>
-      <p>
-        Implement mapStateToProps and
-        <br />
-        mapDispatchToProps here
-        {' '}
-        <br />
-        to connect the app with the redux store
-      </p>
+      <div className='photo'>
+        <img src={photo} />
+      </div>
+      <div className='details'>
+        <h3>{ model }  </h3>
+        <h4> { date } </h4>
+        <h4>{city}</h4>
+       <button onClick={handleDelete}> Remove </button>
+      </div>
     </div>
-  );
+  )
 }
 
-export default Reservations;
+export default Reservation
