@@ -1,4 +1,11 @@
 // import all action types
+import {
+  CALL_API_REQUEST,
+  ADD_RESERVATION_SUCCESS,
+  ADD_RESERVATION_FAILURE,
+  REMOVE_RESERVATION_SUCCESS,
+  REMOVE_RESERVATION_FAILURE,
+} from '../actions/actionCreators';
 
 const initialstate = {
   loading: false,
@@ -28,6 +35,23 @@ const reservations = (state = initialstate, action) => {
         loading: false,
         ...state,
         error: action.payload,
+      };
+
+    case REMOVE_RESERVATION_SUCCESS:
+      return {
+        ...state,
+        reservations: state.reservations.filter(
+          (reservation) => reservation.id !== action.payload.id,
+        ),
+        loading: false,
+        error: '',
+      };
+
+    case REMOVE_RESERVATION_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
       };
   }
 };

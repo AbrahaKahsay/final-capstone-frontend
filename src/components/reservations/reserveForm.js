@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { addToReservations } from '../../redux/reservations/asyncActions/asyncActions';
 
-const Form = ({ model, bike_id, handleSubmit }) => {
+const Form = (props) => {
 
   const [date, setDate] = useState('');
   const [city, setCity] = useState('');
@@ -10,17 +11,17 @@ const Form = ({ model, bike_id, handleSubmit }) => {
 
     const data = {user_id, bike_id, date, city}
 
-    dispatch(postReservation())
+    dispatch(addToReservations())
     console.log(data)
-    
+
     navigate( '/reservations')
   }
   
   return (
-    <form onSubmit={(e) => handleSubmit(e, { user_id, bike_id, date, city })}>
+    <form onSubmit={handleSubmit}>
       <div>
         <label>Select Bike</label>
-        <input type="text" value={model} readOnly />
+        <input type="text" value={bike.model} />
       </div>
       <div>
         <label>City</label>

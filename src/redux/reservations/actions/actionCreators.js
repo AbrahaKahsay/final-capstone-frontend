@@ -1,32 +1,31 @@
 // acction types
-const CALL_API_REQUEST = 'CALL_API_REQUEST';
-const ADD_RESERVATION_SUCCESS = 'ADD_RESERVATION_SUCCESS';
-const ADD_RESERVATION_FAILURE = 'ADD_RESERVATION_FAILURE';
-const REMOVE_RESERVATION_SUCCESS = 'REMOVE_RESERVATION_SUCCESS';
-const REMOVE_RESERVATION_FAILURE = 'REMOVE_RESERVATION_FAILURE';
+export const CALL_API_REQUEST = 'CALL_API_REQUEST';
+export const ADD_RESERVATION_SUCCESS = 'ADD_RESERVATION_SUCCESS';
+export const ADD_RESERVATION_FAILURE = 'ADD_RESERVATION_FAILURE';
+export const REMOVE_RESERVATION_SUCCESS = 'REMOVE_RESERVATION_SUCCESS';
+export const REMOVE_RESERVATION_FAILURE = 'REMOVE_RESERVATION_FAILURE';
 
 // action creators
-const addReservationsRequest = () => ({
+export const addReservationsRequest = () => ({
   type: CALL_API_REQUEST,
 });
 
-const addReservationsSuccess = (reservation) => ({
+export const addReservationsSuccess = (reservation) => ({
   type: ADD_RESERVATION_SUCCESS,
   payload: reservation,
 });
 
-const addReservationsFailure = (error) => ({
+export const addReservationsFailure = (error) => ({
   type: ADD_RESERVATION_FAILURE,
   payload: error,
 });
 
-
-const removeReservationsSuccess = (reservation) => ({
+export const removeReservationsSuccess = (reservation) => ({
   type: REMOVE_RESERVATION_SUCCESS,
   payload: reservation,
 });
 
-const removeReservationsFailure = (error) => ({
+export const removeReservationsFailure = (error) => ({
   type: REMOVE_RESERVATION_FAILURE,
   payload: error,
 });

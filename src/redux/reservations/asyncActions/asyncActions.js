@@ -1,8 +1,10 @@
-// import addReservationsFailure
-// import addReservationsRequest
-// import addReservationsSuccess
+import axios from "axios"
+import { 
+  addReservationsRequest, 
+  addReservationsSuccess,
+  addReservationsFailure} from "../actions/actionCreators"
 
-const api = 'https://jsonplaceholder.typicode.com/users'
+const api = 'http://localhost:4000/api/v1/users/1/reservations'
 
 export const addToReservations = (reservation) => {
     return (dispatch) => {
@@ -18,3 +20,5 @@ export const addToReservations = (reservation) => {
           })   
     }
   }
+
+  // Add actions for remove 
