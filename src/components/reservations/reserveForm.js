@@ -1,25 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Form() {
+const Form = ({ model, bike_id, handleSubmit }) => {
+
+  const [date, setDate] = useState('');
+  const [city, setCity] = useState('');
+
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    const data = {user_id, bike_id, date, city}
+
+    dispatch(postReservation())
+    console.log(data)
+    
+    navigate( '/reservations')
+  }
+  
   return (
-    <div>
-      <h1>Here add the reservations</h1>
-    </div>
-    // <form>
-    //   <div>
-    //     <label>Select Bike</label>
-    //     <input type="text" value={model} />
-    //   </div>
-    //   <div>
-    //     <label>City</label>
-    //     <input type="text" value={city} />
-    //   </div>
-    //   <div>
-    //     <label>Date</label>
-    //     <input type="date" value={date} />
-    //   </div>
-    // </form>
+    <form onSubmit={(e) => handleSubmit(e, { user_id, bike_id, date, city })}>
+      <div>
+        <label>Select Bike</label>
+        <input type="text" value={model} readOnly />
+      </div>
+      <div>
+        <label>City</label>
+        <input
+          type="text"
+          value={city}
+          onChange={(e) => { setCity(e.target.value); }}
+        />
+      </div>
+      <div>
+        <label>Date</label>
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => { setDate(e.target.value); }}
+        />
+      </div>
+      <div>
+        <label>User name</label>
+        <input type="text" value={user.name} />
+      </div>
+      <input type="submit" value="Add Reservation" />
+    </form>
   );
-}
+};
 
 export default Form;
