@@ -13,6 +13,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Models />} />
+          <Route path="/models" element={<Models />} />
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/my-reservations" element={<MyReservations />} />
           <Route path="/add-motorcycle" element={<AddMotorcycle />} />
