@@ -2,9 +2,14 @@
 
 .main-authentification {
 	background: linear-gradient(120deg, #ffffff, #53bf0f);	
-  /* background-color: #fff;	 */
   width: 100%;
+  display:  block
 }
+
+.inactive {
+  display: none;
+}
+
 
 #authentification-h2 {
   font-family: 'Montserrat', sans-serif;
@@ -30,12 +35,23 @@
 	height: 600px;
 	width: 360px;	
 	box-shadow: 0px 0px 24px #569669;
+  animation: swap 1.5s ease-out;
 }
 
 .screen__content {
 	z-index: 1;
 	position: relative;	
 	height: 100%;
+}
+
+@keyframes swap {
+ 0% {
+    transform: rotate3d(0, 2, 0, 60deg);
+  }
+
+  100% {
+    transform: rotate3d(0, 2, 0, 360deg);
+  }
 }
 
 .screen__background {		
