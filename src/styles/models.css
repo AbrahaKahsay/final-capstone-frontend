@@ -14,7 +14,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
-  color: #bbbbbb;
+  color: #bbb;
   text-align: center;
   margin-bottom: 4vh;
 }
@@ -81,7 +81,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #bbbbbb;
+  border: 1px solid #bbb;
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -103,4 +103,3 @@
     height: 55px;
   }
 }
-

@@ -16,6 +16,7 @@ main {
     padding: 3%;
     width: 83%;
     box-sizing: border-box;
+
     /* flex-grow: 1; */
   }
 }
