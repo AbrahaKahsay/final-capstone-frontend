@@ -27,7 +27,7 @@ export const fetchReservationsFromServer = async (dispatch) => {
   const data = await fetch(url);
   const reservations = await data.json();
   dispatch(fetchReservations(reservations));
-  console.log(reservations);
+  // console.log(reservations);
 };
 
 // add input/form data to reservation
@@ -54,18 +54,24 @@ export const removeReservations = (id) => async (dispatch) => {
   dispatch(removeReservation(id));
 };
 
+const initialState = {
+  reservations: [],
+};
+
 // Reducers
-export const reservations = (state = [], action) => {
+export const reservations = (state = initialState, action) => {
   switch (action.type) {
     case RESERVATIONS_FETCHED:
+      console.log(action.payload);
       return {
-        ...action.payload,
+        ...state,
+        reservations: action.payload,
       };
 
     case RESERVATIONS_ADDED:
       return {
         ...state,
-        reservations: [...state.reservations, action.payload],
+        reservations: action.payload,
       };
     case RESERVATIONS_REMOVED:
       return {
