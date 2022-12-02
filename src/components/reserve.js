@@ -12,7 +12,8 @@ const Reseve = () => {
     dispatch(addReservation);
   }, [dispatch]);
 
-  const [date, setDate] = useState('');
+  const [start_date, setStartDate] = useState('');
+  const [end_date, setEndDate] = useState('');
   const [location, setLocation] = useState('');
   const [bike_id, setBikeId] = useState(1);
   const [user_id, setUserId] = useState(1);
@@ -21,7 +22,7 @@ const Reseve = () => {
     e.preventDefault();
 
     const formData = {
-      user_id, bike_id, date, location,
+      user_id, bike_id, start_date, end_date, location,
     };
 
     dispatch(addReservation(formData));
@@ -47,11 +48,20 @@ const Reseve = () => {
       </div>
 
       <div>
-        <label>Date</label>
+        <label>Start Date</label>
         <input
           type="date"
-          value={date}
-          onChange={(e) => { setDate(e.target.value); }}
+          value={start_date}
+          onChange={(e) => { setStartDate(e.target.value); }}
+        />
+      </div>
+
+      <div>
+        <label>End Date</label>
+        <input
+          type="date"
+          value={end_date}
+          onChange={(e) => { setEndDate(e.target.value); }}
         />
       </div>
 
