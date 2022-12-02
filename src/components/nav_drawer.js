@@ -52,7 +52,7 @@ function NavDrawer() {
           onClick={() => setShowMenu(false)}
           to="/"
         >
-          Vespa
+          Ducati
         </Link>
         <Icon
           className="size-menu-btn"
@@ -76,7 +76,7 @@ function NavDrawer() {
           className="brand"
           to="/"
         >
-          Vespa
+          Ducati
         </Link>
         <nav
           className="mobile-nav"
