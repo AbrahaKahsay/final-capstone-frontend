@@ -8,6 +8,11 @@
   height: 12vh;
   padding: 0 3%;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 99;
 }
 
 .brand {
@@ -91,10 +96,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 13%;
-    height: 94vh;
+    width: 17%;
+    height: 100vh;
     padding: 3vh 0;
     border-right: 1px solid #eaeaea;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    background-color: #fff;
   }
 
   .brand {
