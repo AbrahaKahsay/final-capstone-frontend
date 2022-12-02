@@ -8,7 +8,7 @@ function NavDrawer() {
 
   const createLinks = () => {
     const tags = ['MODELS', 'RESERVE', 'MY RESERVATIONS', 'ADD MOTORCYCLE', 'DELETE MOTORCYCLE'];
-    const addresses = ['/', '/reserve', '/my-reservations', '/add-motorcycle', '/delete-motorcycle'];
+    const addresses = ['/models', '/reserve', '/my-reservations', '/add-motorcycle', '/delete-motorcycle'];
     const links = [];
 
     for (let i = 0; i < tags.length; i += 1) {
