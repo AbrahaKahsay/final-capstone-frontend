@@ -2,7 +2,7 @@ import '../styles/login.css';
 
 const signin = () => {
   
-  const changeLogin = () => {
+    const changeLogin = () => {
     document.getElementById('signup').classList.toggle('inactive');
     document.getElementById('login').classList.toggle('inactive');
   };
