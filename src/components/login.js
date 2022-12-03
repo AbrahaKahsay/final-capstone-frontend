@@ -2,7 +2,7 @@ import '../styles/login.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { findUserAsync } from '../redux/models/login';
+import { cleanUser, findUserAsync } from '../redux/models/login';
 //  error = This user is not in database
 
 const Login = () => {
@@ -11,8 +11,10 @@ const Login = () => {
   const [name, setName] = useState('');
   const dispatch = useDispatch();
   const changeLogin = () => {
+    document.querySelector('.login__input').value = '';
     document.getElementById('signup').classList.toggle('inactive');
     document.getElementById('login').classList.toggle('inactive');
+    dispatch(cleanUser());
   };
   const handleOnChange = (e) => {
     setName(e.target.value);
@@ -21,6 +23,7 @@ const Login = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     dispatch(findUserAsync(name));
+    setName('');
   };
 
   useEffect(() => {
@@ -52,6 +55,7 @@ const Login = () => {
             <span className="screen__background__shape screen__background__shape2" />
             <span className="screen__background__shape screen__background__shape1" />
           </div>
+          <div id="error-msg" className={currentUser.error ? '' : 'inactive'}>{currentUser.error}</div>
         </div>
       </div>
     </section>

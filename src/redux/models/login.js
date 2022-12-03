@@ -35,7 +35,7 @@ const findUserAsync = createAsyncThunk(
       const output = await response.json();
       return { user: output, login: true };
     } catch (err) {
-      return 'user NOT found';
+      return { error: 'user NOT found' };
     }
   },
 );
@@ -66,18 +66,18 @@ const userSlice = createSlice({
   name: 'current_user',
   initialState,
   reducers: {
-    userLogout: () => ({ user: null, login: false }),
+    cleanUser: () => ({ user: null, login: false }),
   },
   extraReducers: {
     [findUserAsync.fulfilled]: (state, action) => {
       if (action.payload.error) {
-        return { ...state, error: action.payload };
+        return { ...state, ...action.payload };
       }
       return action.payload;
     },
     [createUserAsync.fulfilled]: (state, action) => {
-      if (action.payload === 'Name is too short or is already used, please try again') {
-        return { ...state, error: action.payload };
+      if (action.payload.error) {
+        return { ...state, ...action.payload };
       }
       return action.payload;
     },
@@ -85,5 +85,5 @@ const userSlice = createSlice({
 });
 const { actions, reducer } = userSlice;
 export { findUserAsync, createUserAsync };
-export const { userLogout } = actions;
+export const { cleanUser } = actions;
 export default reducer;

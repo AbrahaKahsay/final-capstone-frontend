@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { createUserAsync } from '../redux/models/login';
+import { cleanUser, createUserAsync } from '../redux/models/login';
 import '../styles/login.css';
 
 const Signin = () => {
@@ -11,8 +11,10 @@ const Signin = () => {
   const dispatch = useDispatch();
 
   const changeLogin = () => {
+    document.querySelector('.login__input.singup').value = '';
     document.getElementById('signup').classList.toggle('inactive');
     document.getElementById('login').classList.toggle('inactive');
+    dispatch(cleanUser());
   };
   const handleOnChange = (e) => {
     setName(e.target.value);
@@ -21,6 +23,7 @@ const Signin = () => {
     e.preventDefault();
     if (name.trim() !== '') {
       dispatch(createUserAsync(name));
+      setName('');
     }
   };
   useEffect(() => {
@@ -36,7 +39,7 @@ const Signin = () => {
             <h2 id="authentification-h2">Sign Up</h2>
             <form className="login" onSubmit={handleOnSubmit}>
               <div className="login__field">
-                <input type="text" onChange={handleOnChange} className="login__input" placeholder="User name" />
+                <input type="text" onChange={handleOnChange} className="login__input singup" placeholder="User name" />
               </div>
               <button className="button login__submit" type="submit">
                 <span className="button__text">Sign Up</span>
@@ -52,7 +55,7 @@ const Signin = () => {
             <span className="screen__background__shape screen__background__shape2" />
             <span className="screen__background__shape screen__background__shape1" />
           </div>
-          <div id="error-msg" className={currentUser.error ? '' : 'innactive'}>{currentUser.error}</div>
+          <div id="error-msg" className={currentUser.error ? '' : 'inactive'}>{currentUser.error}</div>
         </div>
       </div>
     </section>

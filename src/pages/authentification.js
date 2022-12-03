@@ -3,8 +3,8 @@ import Login from '../components/login';
 import Signin from '../components/singin';
 
 function Authentification() {
-  const errorMsg = useSelector((state) => state.current_user.error);
-  console.log(errorMsg);
+  const user = useSelector((state) => state.current_user);
+  console.log(user);
   return (
     <>
       <Login />
