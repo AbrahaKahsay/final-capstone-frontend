@@ -16,9 +16,9 @@ const fetchModelsAsync = createAsyncThunk(
   },
 );
 
+// Reducer
 const initialState = [];
 
-// Reducer
 const modelSlice = createSlice({
   name: 'models',
   initialState,
