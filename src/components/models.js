@@ -79,11 +79,11 @@ function BikesList() {
 
 function Models() {
   return (
-    <>
+    <div className="models-cont">
       <h1 className="models-title">LATEST MODELS</h1>
       <p className="model-subtitle">Please select a Ducati Model</p>
       <BikesList />
-    </>
+    </div>
   );
 }
 
