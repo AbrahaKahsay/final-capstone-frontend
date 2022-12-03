@@ -1,10 +1,12 @@
 import { Icon } from '@iconify/react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 import '../styles/navdrawer.css';
 
 function NavDrawer() {
   const [showMenu, setShowMenu] = useState(false);
+  const dispatch = useDispatch();
 
   const createLinks = () => {
     const tags = ['MODELS', 'RESERVE', 'MY RESERVATIONS', 'ADD MOTORCYCLE', 'DELETE MOTORCYCLE'];
@@ -23,6 +25,16 @@ function NavDrawer() {
         </NavLink>,
       );
     }
+    links.push(
+      <NavLink
+        className="link"
+        onClick={() => dispatch()}
+        to="/"
+        key={6}
+      >
+        LOG OUT
+      </NavLink>,
+    );
     return links;
   };
 
