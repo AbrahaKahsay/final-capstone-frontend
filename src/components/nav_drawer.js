@@ -29,7 +29,7 @@ function NavDrawer() {
     links.push(
       <NavLink
         className="link"
-        onClick={() => dispatch(userLogout)}
+        onClick={() => dispatch(userLogout())}
         to="/"
         key={6}
       >
