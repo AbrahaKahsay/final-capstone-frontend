@@ -10,6 +10,26 @@
   display: none;
 }
 
+#error-msg {
+  background: #fff;
+ position: absolute;
+ bottom: 100px;
+ left: 50%;
+ transform: translateX(-50%);
+ border-bottom-color: #679e76;
+ background: #fff;
+	font-size: 18px;
+	font-weight: 900;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #D4D3E8;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #ca4343;
+	box-shadow: 0px 2px 2px #569669;
+	cursor: pointer;
+  text-align: center;
+}
 
 #authentification-h2 {
   font-family: 'Montserrat', sans-serif;
