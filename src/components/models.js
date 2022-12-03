@@ -31,7 +31,7 @@ function Bike({ bike }) {
 
   return (
     <li className="bike-item">
-      <Link className="bike-link" to={`/models/${id}`}>
+      <Link className="bike-link" to={`/home/models/${id}`}>
         <div className="img-cont">
           <div className="circle" />
           <img
