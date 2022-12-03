@@ -19,14 +19,11 @@ const Signin = () => {
   };
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    if (name.trim() === '') {
-      console.log('empty');
-    } else {
+    if (name.trim() !== '') {
       dispatch(createUserAsync(name));
     }
   };
   useEffect(() => {
-    console.log(currentUser);
     if (currentUser.login) {
       navigate('/home');
     }
@@ -55,6 +52,7 @@ const Signin = () => {
             <span className="screen__background__shape screen__background__shape2" />
             <span className="screen__background__shape screen__background__shape1" />
           </div>
+          <div id="error-msg" className={currentUser.error ? '' : 'innactive'}>{currentUser.error}</div>
         </div>
       </div>
     </section>

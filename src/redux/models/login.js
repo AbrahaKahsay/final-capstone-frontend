@@ -54,7 +54,7 @@ const createUserAsync = createAsyncThunk(
       const output = await response.json();
       return { user: output, login: true };
     } catch (err) {
-      return err.message;
+      return { error: err.message };
     }
   },
 );
@@ -70,7 +70,7 @@ const userSlice = createSlice({
   },
   extraReducers: {
     [findUserAsync.fulfilled]: (state, action) => {
-      if (action.payload === 'user NOT found') {
+      if (action.payload.error) {
         return { ...state, error: action.payload };
       }
       return action.payload;
