@@ -5,7 +5,8 @@ const FIND_USER = 'final_capstone_frontend/models/FIND_USER';
 
 // URL
 const userURL = 'http://localhost:4000/api/v1/login';
-
+// normal reducers
+// const userLogout = () => LOG_OUT
 // Async function (Function Action Creator)
 const findUserAsync = createAsyncThunk(
   FIND_USER,
@@ -19,24 +20,29 @@ const findUserAsync = createAsyncThunk(
     });
     const text = response.text();
     if (text) return text;
-    return response.json();
+    return { user: response.json(), login: true };
   },
 );
 
-const initialState = [];
+const initialState = { user: null, login: false };
 
 // Reducer
 const userSlice = createSlice({
   name: 'current_user',
   initialState,
+  reducers: {
+    userLogout: () => ({ user: null, login: false }),
+  },
   extraReducers: {
-    [findUserAsync.fulfilled]: (state, action) => (
-
-      action.payload
-    ),
+    [findUserAsync.fulfilled]: (state, action) => {
+      if (action.payload === 'This user is not in database') {
+        return { ...state, error: action.payload };
+      }
+      return { ...state, ...action.payload };
+    },
   },
 });
-
+const { actions, reducer } = userSlice;
 export { findUserAsync };
-
-export default userSlice.reducer;
+export const { userLogout } = actions;
+export default reducer;

@@ -8,6 +8,8 @@ import { findUserAsync } from '../redux/models/login';
 const Login = () => {
   const navigate = useNavigate();
   const currentUser = useSelector((state) => state.current_user);
+  console.log('current user');
+  console.log(currentUser);
   const [name, setName] = useState('');
   const dispatch = useDispatch();
   const changeLogin = () => {
@@ -24,8 +26,8 @@ const Login = () => {
   };
 
   useEffect(() => {
-    console.log(currentUser);
-    if (currentUser !== 'This user is not in database') {
+    if (currentUser.login) {
+      console.log('redirect');
       navigate('/home');
     }
   });
