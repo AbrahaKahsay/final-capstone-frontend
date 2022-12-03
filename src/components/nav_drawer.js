@@ -11,7 +11,7 @@ function NavDrawer() {
 
   const createLinks = () => {
     const tags = ['MODELS', 'RESERVE', 'MY RESERVATIONS', 'ADD MOTORCYCLE', 'DELETE MOTORCYCLE'];
-    const addresses = ['/models', '/reserve', '/my-reservations', '/add-motorcycle', '/delete-motorcycle'];
+    const addresses = ['/home/models', '/home/reserve', '/home/my-reservations', '/home/add-motorcycle', '/home/delete-motorcycle'];
     const links = [];
 
     for (let i = 0; i < tags.length; i += 1) {
@@ -63,7 +63,7 @@ function NavDrawer() {
         <Link
           className="brand"
           onClick={() => setShowMenu(false)}
-          to="/"
+          to="/home/models"
         >
           Ducati
         </Link>
@@ -87,7 +87,7 @@ function NavDrawer() {
       <div className="desktop-menu">
         <Link
           className="brand"
-          to="/"
+          to="/home/models"
         >
           Ducati
         </Link>
