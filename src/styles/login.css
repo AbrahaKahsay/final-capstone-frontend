@@ -7,7 +7,7 @@
 }
 
 .inactive {
-  display: none;
+  display: none !important;
 }
 
 #error-msg {

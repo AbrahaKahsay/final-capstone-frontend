@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 import '../styles/navdrawer.css';
-import { userLogout } from '../redux/models/login';
+import { cleanUser } from '../redux/models/login';
 
 function NavDrawer() {
   const [showMenu, setShowMenu] = useState(false);
@@ -29,7 +29,7 @@ function NavDrawer() {
     links.push(
       <NavLink
         className="link"
-        onClick={() => dispatch(userLogout())}
+        onClick={() => dispatch(cleanUser())}
         to="/"
         key={6}
       >
