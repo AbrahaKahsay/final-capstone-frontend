@@ -1,27 +1,47 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { createUserAsync } from '../redux/models/login';
 import '../styles/login.css';
 
 const Signin = () => {
-  const [userName, setUserName] = useState('');
+  const currentUser = useSelector((state) => state.current_user);
+  const [name, setName] = useState('');
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const changeLogin = () => {
     document.getElementById('signup').classList.toggle('inactive');
     document.getElementById('login').classList.toggle('inactive');
   };
   const handleOnChange = (e) => {
-    setUserName(e.target.value);
-    console.log(userName);
+    setName(e.target.value);
   };
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    if (name.trim() === '') {
+      console.log('empty');
+    } else {
+      dispatch(createUserAsync(name));
+    }
+  };
+  useEffect(() => {
+    console.log(currentUser);
+    if (currentUser.login) {
+      navigate('/home');
+    }
+  });
   return (
     <section id="signup" className="main-authentification inactive">
       <div className="container">
         <div className="screen">
           <div className="screen__content">
             <h2 id="authentification-h2">Sign Up</h2>
-            <form className="login">
+            <form className="login" onSubmit={handleOnSubmit}>
               <div className="login__field">
                 <input type="text" onChange={handleOnChange} className="login__input" placeholder="User name" />
               </div>
-              <button className="button login__submit" type="button">
+              <button className="button login__submit" type="submit">
                 <span className="button__text">Sign Up</span>
               </button>
               <button className="button login__submit" type="button" onClick={changeLogin}>
