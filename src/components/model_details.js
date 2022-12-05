@@ -8,7 +8,7 @@ import '../styles/details.css';
 
 function BackToModels() {
   return (
-    <Link className="back-btn" to="/models">
+    <Link className="back-btn" to="/home/models">
       <Icon
         className="back-arrow"
         color="#fff"
@@ -76,7 +76,7 @@ function ExtraInfo() {
 
 function ReserveLink() {
   return (
-    <Link className="res-btn" to="/reserve">
+    <Link className="res-btn" to="/home/reserve">
       <Icon
         className="bike-icon"
         color="#fff"
