@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addReservation } from '../redux/reservations/reservations';
 // import { postReservations } from '../../redux/reservations/newAxios';
 
-const Reseve = () => {
+const Reserve = () => {
   const dispatch = useDispatch();
   //   const reservations = useSelector((state) => state.reservations.reservations);
 
@@ -92,4 +92,4 @@ const Reseve = () => {
   );
 };
 
-export default Reseve;
+export default Reserve;
