@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import NavDrawer from './components/nav_drawer';
 import Models from './components/models';
+import ModelDetails from './components/model_details';
 import Reserve from './components/reserve';
 import MyReservations from './components/my_reservations';
 import AddMotorcycle from './components/add_motorcycle';
@@ -12,8 +13,8 @@ function App() {
       <NavDrawer />
       <main>
         <Routes>
-          <Route path="/" element={<Models />} />
           <Route path="/models" element={<Models />} />
+          <Route path="/models/:id" element={<ModelDetails />} />
           <Route path="/reserve" element={<Reserve />} />
           <Route path="/my-reservations" element={<MyReservations />} />
           <Route path="/add-motorcycle" element={<AddMotorcycle />} />
