@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBikeAsync } from '../redux/models/models';
+import '../styles/add_motorcycle.css';
 
 function Form() {
   const [model, setModel] = useState('');
   const [photo, setPhoto] = useState('');
-  const [power, setPower] = useState(0);
-  const [weight, setWeight] = useState(0);
-  const [price, setPrice] = useState(0);
+  const [power, setPower] = useState('');
+  const [weight, setWeight] = useState('');
+  const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
 
   const dispatch = useDispatch();
@@ -27,61 +28,66 @@ function Form() {
   const resetForm = () => {
     setModel('');
     setPhoto('');
-    setPower(0);
-    setWeight(0);
-    setPrice(0);
+    setPower('');
+    setWeight('');
+    setPrice('');
     setDescription('');
   };
 
   return (
     <>
-      <form onSubmit={addBikehandler} onReset={resetForm}>
+      <form
+        className="bike-form"
+        onSubmit={addBikehandler}
+        onReset={resetForm}
+      >
         <input
-          className="model-input"
+          className="bike-input"
           type="text"
           value={model}
           onChange={(e) => setModel(e.target.value)}
           placeholder="Model name"
         />
         <input
-          className="photo-input"
+          className="bike-input"
           type="text"
           value={photo}
           onChange={(e) => setPhoto(e.target.value)}
           placeholder="URL or upload a picture"
         />
         <input
-          className="model-input"
+          className="bike-input"
           type="number"
           value={power}
           onChange={(e) => setPower(e.target.value)}
-          placeholder="Bike power/HP"
+          placeholder="Bike power HP"
         />
         <input
-          className="photo-input"
+          className="bike-input"
           type="number"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
-          placeholder="Bike weight/Kg"
+          placeholder="Bike weight Kg"
         />
         <input
-          className="model-input"
+          className="bike-input"
           type="number"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           placeholder="Price $"
         />
         <textarea
-          className="photo-input"
+          className="bike-input"
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Write a short description"
+          rows="6"
         />
         <input
-          className="update-btn add-btn"
+          className="res-btn add-bike-btn"
           type="submit"
-          value="ADD BIKE"
+          value="Add Bike"
           title="Click this or press enter to submit"
         />
       </form>
@@ -91,10 +97,10 @@ function Form() {
 
 function AddMotorcycle() {
   return (
-    <>
-      <h2>Add Motorcyle</h2>
+    <div className="bike-form-cont">
+      <h2 className="models-title bike-form-title">ADD A NEW MODEL</h2>
       <Form />
-    </>
+    </div>
   );
 }
 
