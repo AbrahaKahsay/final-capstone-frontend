@@ -3,6 +3,11 @@ main {
   top: 12vh;
   width: 100%;
   padding-bottom: 5%;
+  box-sizing: border-box;
+}
+
+#root {
+  box-sizing: border-box;
 }
 
 @media screen and (min-width: 768px) {
@@ -13,9 +18,8 @@ main {
   main {
     left: 17%;
     top: 0;
-    padding: 3%;
     width: 83%;
-    box-sizing: border-box;
+    padding-bottom: 0;
 
     /* flex-grow: 1; */
   }
