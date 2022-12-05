@@ -115,7 +115,6 @@ function ModelDetails() {
           title={`${brand} ${model}`}
           className="single-bike"
         />
-        {/* <BackToModels /> */}
       </section>
       <section className="second-info">
         <Info
@@ -131,16 +130,12 @@ function ModelDetails() {
 
 Info.propTypes = {
   details: PropTypes.shape({
-    id: PropTypes.number,
     brand: PropTypes.string,
     model: PropTypes.string,
     photo: PropTypes.string,
     power: PropTypes.number,
     weight: PropTypes.number,
     price: PropTypes.number,
-    created_at: PropTypes.string,
-    updated_at: PropTypes.string,
-    description: PropTypes.string,
   }).isRequired,
 };
 
