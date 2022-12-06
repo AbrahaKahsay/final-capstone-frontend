@@ -3,6 +3,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // Actions
 const FETCH_BIKES_MODELS = 'final_capstone_frontend/models/FETCH_BIKES_MODELS';
 const ADD_BIKE_MODEL = 'final_capstone_frontend/models/ADD_BIKE_MODEL';
+const DELETE_BIKE_MODEL = 'final_capstone_frontend/models/DELETE_BIKE_MODEL';
 
 // URL
 const modelsURL = 'http://localhost:3001/api/v1/bikes';
@@ -24,10 +25,20 @@ const addBikeAsync = createAsyncThunk(
       method: 'POST',
       body: JSON.stringify(bike),
       headers: {
-        'Content-type': 'application/json',
+        'Content-type': 'application/json; charset=UTF-8',
       },
     });
-    return bike;
+    return { ...bike };
+  },
+);
+
+const deleteBikeAsync = createAsyncThunk(
+  DELETE_BIKE_MODEL,
+  async (id) => {
+    await fetch(`${modelsURL}/${id}`, {
+      method: 'DELETE',
+    });
+    return id;
   },
 );
 
@@ -45,10 +56,16 @@ const modelSlice = createSlice({
       ))
       .addCase(addBikeAsync.fulfilled, (state, action) => (
         [...state, { ...action.payload }]
-      ));
+      ))
+      .addCase(deleteBikeAsync.fulfilled, (state, action) => {
+        const id = action.payload;
+        return state.filter((bike) => bike.id !== id);
+      });
   },
 });
 
-export { fetchModelsAsync, addBikeAsync };
+export {
+  fetchModelsAsync, addBikeAsync, deleteBikeAsync,
+};
 
 export default modelSlice.reducer;
