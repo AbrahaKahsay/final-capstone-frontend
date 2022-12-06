@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import {
+  useSelector,
+  useDispatch,
+} from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
@@ -53,12 +56,11 @@ function Bike({ bike }) {
 
 function BikesList() {
   const dispatch = useDispatch();
+  const bikes = useSelector((state) => state.models);
 
   useEffect(() => {
     dispatch(fetchModelsAsync());
   }, [dispatch]);
-
-  const bikes = useSelector((state) => state.models);
 
   const createList = (bikes) => {
     const list = bikes.map((bike) => (
