@@ -98,7 +98,7 @@ function Form() {
 function AddMotorcycle() {
   return (
     <div className="bike-form-cont">
-      <h2 className="models-title bike-form-title">ADD A NEW MODEL</h2>
+      <h2 className="models-title">ADD A NEW MODEL</h2>
       <Form />
     </div>
   );
