@@ -1,20 +1,26 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchReservationsFromServer } from '../redux/reservations/reservations';
+import { fetchReservationsFromServer, removeReservations } from '../redux/reservations/reservations';
+import '../styles/my_reservations.css';
 
 function MyReservations() {
   const dispatch = useDispatch();
   const reservations = useSelector((state) => state.reservations.reservations);
   console.log(reservations);
+
   useEffect(() => {
     dispatch(fetchReservationsFromServer);
   }, [dispatch]);
 
+  const handleDelete = () => {
+    dispatch(removeReservations);
+  };
+
   return (
-    <div>
-      <h1>This is a list of your reservations</h1>
+    <div className="res-container">
+      <h1>My Reservations</h1>
       {reservations.map((reservation) => (
-        <div key={reservation.id}>
+        <div className="card" key={reservation.id}>
           <h2>
             City:
             {reservation.location}
@@ -27,9 +33,11 @@ function MyReservations() {
             End Date:
             {reservation.end_date}
           </h2>
+          <div className="delete-reservation">
+            <button type="button" onClick={handleDelete}>Delete</button>
+          </div>
         </div>
       ))}
-
     </div>
   );
 }
