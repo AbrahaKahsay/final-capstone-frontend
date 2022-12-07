@@ -11,7 +11,27 @@
   width: 100%;
   height: 100vh;
   padding: 20vh;
-  background-color: rgba(151, 191, 15, 0.8);
+  background-color: rgba(151, 191, 1);
+  position: relative;
+}
+
+.form-container:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  background-image: url('https://wlassets.vespa.com/wlassets/vespa/master/range/gts/family_page/2022/hotspot/Vespa_GTS-Classic_hotspot_3000x2000_1/original/Vespa_GTS-Classic_hotspot_3000x2000_1.png?1663852802693');
+  background-repeat: no-repeat;
+  /* background-position: 50% 0; */
+  background-size: cover;
+}
+
+.res-form {
+  position: relative;
 }
 
 form {
@@ -21,19 +41,41 @@ form {
 }
 
 form > div {
-  width: 80%;
+  width: 100%;
+  padding-left: 20%;
 }
 
 form > div > label {
-  font-weight: 500;
+  font-weight: 600;
+  color: aliceblue;
+  font-size: large;
+  margin-left: 5px;
 }
 
 form input {
   width: 100%;
   padding: 8px 4px;
   margin: 4px auto;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  padding: 10px 12px;
 }
 
 .reserve-btn {
-  width: 80%;
+  width: 20%;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  margin-left: 20%;
+  color: rgba(151, 191, 1);
+  font-weight: 600;
+  background-color: white;
+}
+
+.tit-form {
+  text-align: center;
+  color: aliceblue;
+  font-weight: 700;
+  font-size: large;
 }
