@@ -23,8 +23,8 @@ const removeReservation = (id) => ({
 const url = 'http://localhost:3001/api/v1/users/1/reservations';
 
 // fetch reservations from the server
-export const fetchReservationsFromServer = () => async (dispatch) => {
-  const data = await fetch(url);
+export const fetchReservationsFromServer = (id) => async (dispatch) => {
+  const data = await fetch(`http://localhost:3001/api/v1/users/${id}/reservations`);
   const reservations = await data.json();
   console.log('reservations');
   console.log(reservations);
@@ -33,6 +33,7 @@ export const fetchReservationsFromServer = () => async (dispatch) => {
 
 // add input/form data to reservation
 export const addReservation = (formData) => async (dispatch) => {
+  // const { user_id: id } = formData;
   const response = await fetch(url, {
     method: 'POST',
     headers: {

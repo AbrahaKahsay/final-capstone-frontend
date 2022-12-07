@@ -53,12 +53,11 @@ function Bike({ bike }) {
 
 function BikesList() {
   const dispatch = useDispatch();
+  const bikes = useSelector((state) => state.models);
 
   useEffect(() => {
     dispatch(fetchModelsAsync());
   }, [dispatch]);
-
-  const bikes = useSelector((state) => state.models);
 
   const createList = (bikes) => {
     const list = bikes.map((bike) => (

@@ -5,15 +5,18 @@ import { addReservation } from '../redux/reservations/reservations';
 import '../styles/reserve.css'
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import { fetchModelsAsync } from '../redux/models/models';
 
 const Reserve = () => {
   const dispatch = useDispatch();
   const locationReact = useLocation()
-  const { id } = locationReact.state || {id: null}
+  const { id } = locationReact.state || {id: null};
   const user = useSelector((state) => state.current_user.user)
+  const models = useSelector((state) => state.models);
+  console.log(user);
+  console.log(models);
   useEffect(() => {
-    dispatch(addReservation);
+    dispatch(fetchModelsAsync());
   }, [dispatch]);
 
   const [start_date, setStartDate] = useState('');
@@ -24,10 +27,17 @@ const Reserve = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      user_id: user.id, bike_id: id || bikeId, start_date, end_date, location,
+      user_id: user.id, bike_id: id || bikeId , start_date, end_date, location,
     };
     dispatch(addReservation(formData));
   };
+
+  const modelsList = (bikes) => {
+    const list = bikes.map((bike) => (
+      <option key={`res-${bike.id}`} value={bike.id}>{ bike.model }</option>
+    ));
+    return list;
+  }
 
   return (
     <div className='form-container'>
@@ -64,7 +74,15 @@ const Reserve = () => {
           <>
             <div>
               <label>Bike:</label>
-              {/* input to be added */}
+              <input list="models"
+                name="models"
+                id="list-cont"
+                value = {bikeId}
+                onChange={(e) => { setBikeId(e.target.value); }}
+              />
+                <datalist id="models">
+                  { modelsList(models) }
+                </datalist>
             </div>
             <input className='reserve-btn' type="submit" value="Add Reservation" />
           </>
