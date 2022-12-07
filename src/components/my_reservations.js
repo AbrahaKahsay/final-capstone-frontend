@@ -6,8 +6,9 @@ import '../styles/my_reservations.css';
 
 function MyReservations() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.current_user.user);
   useEffect(() => {
-    dispatch(fetchReservationsFromServer());
+    dispatch(fetchReservationsFromServer(user.id));
     dispatch(fetchModelsAsync());
   }, [dispatch]);
 
@@ -16,11 +17,13 @@ function MyReservations() {
   const handleDelete = () => {
     dispatch(removeReservations);
   };
+  console.log(reservations);
 
   return (
     <div className="res-container">
       <h1>My Reservations</h1>
-      {reservations.map((reservation) => {
+
+      {reservations.length !== 0 ? reservations.map((reservation) => {
         const bike = bikes.find((bike) => bike.id === reservation.bike_id);
         return (
           <div className="card" key={reservation.id}>
@@ -49,7 +52,8 @@ function MyReservations() {
             </div>
           </div>
         );
-      })}
+      })
+        : <h2>No reservations</h2>}
     </div>
   );
 }
