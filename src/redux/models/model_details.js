@@ -20,10 +20,10 @@ const initialState = {};
 const detailSlice = createSlice({
   name: 'details',
   initialState,
-  extraReducers: {
-    [fetchDetailsAsync.fulfilled]: (state, action) => (
+  extraReducers: (builder) => {
+    builder.addCase(fetchDetailsAsync.fulfilled, (state, action) => (
       { ...action.payload }
-    ),
+    ));
   },
 });
 
