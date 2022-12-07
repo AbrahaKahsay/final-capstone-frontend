@@ -74,7 +74,7 @@ const Reserve = () => {
           :
           <>
             <div>
-              <label>Bike:</label>
+              <label>Bike Model</label>
               <input list="models"
                 name="models"
                 id="list-cont"
