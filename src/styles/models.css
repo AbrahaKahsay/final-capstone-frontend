@@ -107,6 +107,6 @@
   .bike-description {
     margin: 2vh 0 1vh 0;
     width: 350px;
-    height: 55px;
+    min-height: 75px;
   }
 }

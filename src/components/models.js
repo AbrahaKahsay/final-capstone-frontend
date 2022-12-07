@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import {
+  useSelector,
+  useDispatch,
+} from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
@@ -17,7 +20,7 @@ function Bike({ bike }) {
 
     for (let i = 0; i < modelMedia.length; i += 1) {
       social.push(
-        <li className="social-cont" key={modelMedia[i]}>
+        <li className="social-cont" key={`${id}-${modelMedia[i]}`}>
           <Icon
             className="social-mini"
             color="#bbbbbb"
@@ -92,11 +95,6 @@ Bike.propTypes = {
     brand: PropTypes.string,
     model: PropTypes.string,
     photo: PropTypes.string,
-    power: PropTypes.number,
-    weight: PropTypes.number,
-    price: PropTypes.number,
-    created_at: PropTypes.string,
-    updated_at: PropTypes.string,
     description: PropTypes.string,
   }).isRequired,
 };
