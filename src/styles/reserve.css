@@ -12,10 +12,9 @@
   height: 100vh;
   padding: 20vh;
   background-color: rgba(151, 191, 1);
-  position: relative;
 }
 
-.form-container:before {
+.form-container::before {
   content: ' ';
   display: block;
   position: absolute;
@@ -26,6 +25,7 @@
   opacity: 0.2;
   background-image: url('https://wlassets.vespa.com/wlassets/vespa/master/range/gts/family_page/2022/hotspot/Vespa_GTS-Classic_hotspot_3000x2000_1/original/Vespa_GTS-Classic_hotspot_3000x2000_1.png?1663852802693');
   background-repeat: no-repeat;
+
   /* background-position: 50% 0; */
   background-size: cover;
 }
@@ -54,7 +54,6 @@ form > div > label {
 
 form input {
   width: 100%;
-  padding: 8px 4px;
   margin: 4px auto;
   border-radius: 15px;
   border: none;
