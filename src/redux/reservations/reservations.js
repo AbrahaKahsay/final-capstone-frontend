@@ -20,10 +20,11 @@ const removeReservation = (id) => ({
 });
 
 // get resrvations from server
-const url = 'http://localhost:3001/api/v1/users/1/reservations';
+const url = (id) => `http://localhost:3001/api/v1/users/${id}/reservations`;
 
 // fetch reservations from the server
 export const fetchReservationsFromServer = (id) => async (dispatch) => {
+  console.log(id);
   const data = await fetch(`http://localhost:3001/api/v1/users/${id}/reservations`);
   const reservations = await data.json();
   console.log('reservations');
@@ -34,7 +35,9 @@ export const fetchReservationsFromServer = (id) => async (dispatch) => {
 // add input/form data to reservation
 export const addReservation = (formData) => async (dispatch) => {
   // const { user_id: id } = formData;
-  const response = await fetch(url, {
+  console.log('addreservation');
+  console.log(formData.user_id);
+  const response = await fetch(url(formData.user_id), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -42,7 +45,7 @@ export const addReservation = (formData) => async (dispatch) => {
     body: JSON.stringify(formData),
   });
   dispatch(postReservations(response));
-  console.log(response);
+  // console.log(response);
 };
 
 // delete specific reservation
@@ -71,10 +74,7 @@ export const reservations = (state = initialState, action) => {
       };
 
     case RESERVATIONS_ADDED:
-      return {
-        ...state,
-        reservations: action.payload,
-      };
+      return state;
     case RESERVATIONS_REMOVED:
       return {
         ...state,
