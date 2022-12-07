@@ -41,7 +41,8 @@ const Reserve = () => {
 
   return (
     <div className='form-container'>
-      <form onSubmit={handleSubmit}>
+      <h1 className='tit-form'>BOOK A VESPA TEST-RIDE</h1>
+      <form className='res-form' onSubmit={handleSubmit}>
         <div>
           <label>Location</label>
           <input
