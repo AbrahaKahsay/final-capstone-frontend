@@ -42,14 +42,16 @@ export const addReservation = (formData) => async (dispatch) => {
 };
 
 // delete specific reservation
-export const removeReservations = (id) => async (dispatch) => {
-  await fetch(`${url}/${id}`, {
+export const removeReservations = (data) => async (dispatch) => {
+  console.log(data);
+  await fetch(`${url(data.user_id)}/${data.id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
+    body: JSON.stringify({ id: data.id }),
   });
-  dispatch(removeReservation(id));
+  dispatch(removeReservation(data.id));
 };
 
 const initialState = {
@@ -74,7 +76,7 @@ export const reservations = (state = initialState, action) => {
       return {
         ...state,
         reservations: state.reservations.filter(
-          (reservation) => reservation.id !== action.payload.id,
+          (reservation) => reservation.id !== action.id,
         ),
       };
     default:
