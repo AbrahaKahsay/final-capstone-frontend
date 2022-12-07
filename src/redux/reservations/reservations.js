@@ -20,14 +20,15 @@ const removeReservation = (id) => ({
 });
 
 // get resrvations from server
-const url = '/api/v1/users/1/reservations';
+const url = 'http://localhost:3001/api/v1/users/1/reservations';
 
 // fetch reservations from the server
 export const fetchReservationsFromServer = async (dispatch) => {
   const data = await fetch(url);
   const reservations = await data.json();
+  console.log('reservations');
+  console.log(reservations);
   dispatch(fetchReservations(reservations));
-  // console.log(reservations);
 };
 
 // add input/form data to reservation
