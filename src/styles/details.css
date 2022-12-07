@@ -121,6 +121,7 @@
   .det-cont {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 10% 3% 0 0;
     gap: 3%;
   }
