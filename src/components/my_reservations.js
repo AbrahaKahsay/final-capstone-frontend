@@ -6,16 +6,13 @@ import '../styles/my_reservations.css';
 
 function MyReservations() {
   const dispatch = useDispatch();
-  const reservations = useSelector((state) => state.reservations.reservations);
-  const bikes = useSelector((state) => state.models);
-  console.log('bikes');
-  console.log(bikes);
-
   useEffect(() => {
     dispatch(fetchReservationsFromServer());
     dispatch(fetchModelsAsync());
-  });
+  }, [dispatch]);
 
+  const reservations = useSelector((state) => state.reservations.reservations);
+  const bikes = useSelector((state) => state.models);
   const handleDelete = () => {
     dispatch(removeReservations);
   };
@@ -31,10 +28,14 @@ function MyReservations() {
               City:
               {reservation.location}
             </h2>
-            <h2>
-              bike:
-              {bike.model}
-            </h2>
+            {bike
+              ? (
+                <h2>
+                  bike:
+                  {bike.model}
+                </h2>
+              )
+              : <p /> }
             <h2>
               Start Date:
               {reservation.start_date}
