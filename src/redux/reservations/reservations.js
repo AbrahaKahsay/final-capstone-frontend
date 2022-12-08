@@ -20,11 +20,11 @@ const removeReservation = (id) => ({
 });
 
 // get resrvations from server
-const url = (id) => `http://localhost:3001/api/v1/users/${id}/reservations`;
+const url = (id) => `https://bikes-db.onrender.com/api/v1/users/${id}/reservations`;
 
 // fetch reservations from the server
 export const fetchReservationsFromServer = (id) => async (dispatch) => {
-  const data = await fetch(`http://localhost:3001/api/v1/users/${id}/reservations`);
+  const data = await fetch(`https://bikes-db.onrender.com/api/v1/users/${id}/reservations`);
   const reservations = await data.json();
   dispatch(fetchReservations(reservations));
 };
