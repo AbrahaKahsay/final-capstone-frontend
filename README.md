@@ -4,6 +4,10 @@ This is the front end of the final capstone.
 The user can signup or login, then it will be redirected to the home page after a successful login. The user can see all the models of bikes on the page, after clicking them the user can add a reservasion to a specific bike and if the user wants to add a reservasion without going through this procces it can be done by a link on the navbar. Additionally, the user can see their reservations, and create or delete a bike.
 <hr>
 
+## Live demo
+
+- [Ducati Rentals](https://ducati-rentals.netlify.app/)
+<hr>
 
 ## Api
 This app is done with a backend developed by our team.
