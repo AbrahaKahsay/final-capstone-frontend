@@ -34,7 +34,7 @@ function MyReservations() {
             {bike
               ? (
                 <h2>
-                  bike:
+                  Bike Model:
                   {bike.model}
                 </h2>
               )
@@ -49,6 +49,17 @@ function MyReservations() {
             </h2>
             <div className="delete-reservation">
               <button type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
+            </div>
+            <div >
+              {bike
+                ? (
+                  <img
+                    src={bike.photo}
+                    alt="model"
+                    className="bike-photo"
+                  />
+                )
+                : <p /> }
             </div>
           </div>
         );
