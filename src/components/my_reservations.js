@@ -10,14 +10,13 @@ function MyReservations() {
   useEffect(() => {
     dispatch(fetchReservationsFromServer(user.id));
     dispatch(fetchModelsAsync());
-  }, [dispatch]);
+  }, [dispatch, user.id]);
 
   const reservations = useSelector((state) => state.reservations.reservations);
   const bikes = useSelector((state) => state.models);
   const handleDelete = (id) => {
     dispatch(removeReservations({ id, user_id: user.id }));
   };
-  console.log(reservations);
 
   return (
     <div className="res-container">
