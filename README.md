@@ -97,6 +97,11 @@ Give a ⭐️ if you like this project!
 - Code Reviewers.
 <hr>
 
+## Design Template
+
+- Credits to [Murat Korkmaz on Behance](https://www.behance.net/muratk) the author of the [original design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign).
+<hr>
+
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
