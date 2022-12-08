@@ -71,6 +71,12 @@ form input {
   background-color: white;
 }
 
+.reserve-btn:hover {
+  background-color: rgb(26, 168, 7);
+  cursor: pointer;
+  color: white;
+}
+
 .tit-form {
   text-align: center;
   color: aliceblue;
