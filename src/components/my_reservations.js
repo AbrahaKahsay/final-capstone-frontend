@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import moment from 'moment';
 import { fetchReservationsFromServer, removeReservations } from '../redux/reservations/reservations';
 import { fetchModelsAsync } from '../redux/models/models';
 import '../styles/my_reservations.css';
@@ -27,30 +28,32 @@ function MyReservations() {
         const bike = bikes.find((bike) => bike.id === reservation.bike_id);
         return (
           <div className="card" key={reservation.id}>
-            <h2>
-              City:
-              {reservation.location}
-            </h2>
-            {bike
-              ? (
-                <h2>
-                  Bike Model:
-                  {bike.model}
-                </h2>
-              )
-              : <p /> }
-            <h2>
-              Start Date:
-              {reservation.start_date}
-            </h2>
-            <h2>
-              End Date:
-              {reservation.end_date}
-            </h2>
-            <div className="delete-reservation">
-              <button type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
+            <div className="bike-info">
+              <h2>
+                City:
+                {reservation.location}
+              </h2>
+              {bike
+                ? (
+                  <h2>
+                    Bike Model:
+                    {bike.model}
+                  </h2>
+                )
+                : <p /> }
+              <h2>
+                Start Date:
+                {moment(reservation.start_date).utc().format('YYYY-MM-DD')}
+              </h2>
+              <h2>
+                End Date:
+                {moment(reservation.end_date).utc().format('YYYY-MM-DD')}
+              </h2>
+              <div className="delete-reservation">
+                <button type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
+              </div>
             </div>
-            <div >
+            <div className="bike-cont">
               {bike
                 ? (
                   <img
