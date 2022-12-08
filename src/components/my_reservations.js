@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import moment from 'moment';
 import { fetchReservationsFromServer, removeReservations } from '../redux/reservations/reservations';
 import { fetchModelsAsync } from '../redux/models/models';
 import '../styles/my_reservations.css';
@@ -21,34 +22,51 @@ function MyReservations() {
 
   return (
     <div className="res-container">
-      <h1>My Reservations</h1>
+      <div className="title"><h1>My Reservations</h1></div>
 
       {reservations.length !== 0 ? reservations.map((reservation) => {
         const bike = bikes.find((bike) => bike.id === reservation.bike_id);
         return (
           <div className="card" key={reservation.id}>
-            <h2>
-              City:
-              {reservation.location}
-            </h2>
-            {bike
-              ? (
-                <h2>
-                  bike:
-                  {bike.model}
-                </h2>
-              )
-              : <p /> }
-            <h2>
-              Start Date:
-              {reservation.start_date}
-            </h2>
-            <h2>
-              End Date:
-              {reservation.end_date}
-            </h2>
+            <div className="bike-info">
+              <h2>
+                City:
+                <span>{' '}</span>
+                {reservation.location}
+              </h2>
+              {bike
+                ? (
+                  <h2>
+                    Bike Model:
+                    <span>{' '}</span>
+                    {bike.model}
+                  </h2>
+                )
+                : <p /> }
+              <h2>
+                Start Date:
+                <span>{' '}</span>
+                {moment(reservation.start_date).utc().format('YYYY-MM-DD')}
+              </h2>
+              <h2>
+                End Date:
+                <span>{' '}</span>
+                {moment(reservation.end_date).utc().format('YYYY-MM-DD')}
+              </h2>
+            </div>
+            <div className="bike-cont">
+              {bike
+                ? (
+                  <img
+                    src={bike.photo}
+                    alt="model"
+                    className="bike-photo"
+                  />
+                )
+                : <p /> }
+            </div>
             <div className="delete-reservation">
-              <button type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
+              <button className="delete-btn" type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
             </div>
           </div>
         );
