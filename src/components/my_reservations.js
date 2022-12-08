@@ -14,8 +14,8 @@ function MyReservations() {
 
   const reservations = useSelector((state) => state.reservations.reservations);
   const bikes = useSelector((state) => state.models);
-  const handleDelete = () => {
-    dispatch(removeReservations);
+  const handleDelete = (id) => {
+    dispatch(removeReservations({ id, user_id: user.id }));
   };
   console.log(reservations);
 
@@ -48,7 +48,7 @@ function MyReservations() {
               {reservation.end_date}
             </h2>
             <div className="delete-reservation">
-              <button type="button" onClick={handleDelete}>Delete</button>
+              <button type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
             </div>
           </div>
         );

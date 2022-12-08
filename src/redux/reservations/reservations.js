@@ -20,40 +20,38 @@ const removeReservation = (id) => ({
 });
 
 // get resrvations from server
-const url = 'http://localhost:3001/api/v1/users/1/reservations';
+const url = (id) => `http://localhost:3001/api/v1/users/${id}/reservations`;
 
 // fetch reservations from the server
 export const fetchReservationsFromServer = (id) => async (dispatch) => {
   const data = await fetch(`http://localhost:3001/api/v1/users/${id}/reservations`);
   const reservations = await data.json();
-  console.log('reservations');
-  console.log(reservations);
   dispatch(fetchReservations(reservations));
 };
 
 // add input/form data to reservation
 export const addReservation = (formData) => async (dispatch) => {
-  // const { user_id: id } = formData;
-  const response = await fetch(url, {
+  await fetch(url(formData.user_id), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(formData),
   });
-  dispatch(postReservations(response));
-  console.log(response);
+  dispatch(postReservations(formData));
 };
 
 // delete specific reservation
-export const removeReservations = (id) => async (dispatch) => {
-  await fetch(`${url}/${id}`, {
+export const removeReservations = (data) => async (dispatch) => {
+  console.log(data);
+  await fetch(`${url(data.user_id)}/${data.id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
+    body: JSON.stringify({ id: data.id }),
   });
-  dispatch(removeReservation(id));
+  dispatch(removeReservation(data.id));
 };
 
 const initialState = {
@@ -64,7 +62,6 @@ const initialState = {
 export const reservations = (state = initialState, action) => {
   switch (action.type) {
     case RESERVATIONS_FETCHED:
-      console.log(action.payload);
       return {
         ...state,
         reservations: action.payload,
@@ -73,13 +70,13 @@ export const reservations = (state = initialState, action) => {
     case RESERVATIONS_ADDED:
       return {
         ...state,
-        reservations: action.payload,
+        reservations: [...state.reservations, action.payload],
       };
     case RESERVATIONS_REMOVED:
       return {
         ...state,
         reservations: state.reservations.filter(
-          (reservation) => reservation.id !== action.payload.id,
+          (reservation) => reservation.id !== action.id,
         ),
       };
     default:
