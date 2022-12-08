@@ -28,7 +28,7 @@ function NavDrawer() {
     }
     links.push(
       <NavLink
-        className="link"
+        className="link logout"
         onClick={() => dispatch(cleanUser())}
         to="/"
         key={6}
