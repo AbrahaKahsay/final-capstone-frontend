@@ -52,7 +52,7 @@ $ node --version
 $ git clone https://github.com/AbrahaKahsay/final-capstone-frontend.git
 ```
 ```
-$ cd final-capstone-backend
+$ cd final-capstone-frontend
 ```
 ```
 $ npm install
