@@ -1,17 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 # Final Capstone Front-end
 This is the front end of the final capstone.
-The user can singup or login. then it will be redirected to the home page afte a succesfull login. The user can the See all the models of bikes in the page. after clicking them te user can add a reservasion to a specific bike and if the useer want to add a reservasion without going through this procces it can be done by a link on the navbar. LIkewise the user can see its reservasions create and delete a bike
+The user can signup or login, then it will be redirected to the home page after a successful login. The user can see all the models of bikes on the page, after clicking them the user can add a reservasion to a specific bike and if the user wants to add a reservasion without going through this procces it can be done by a link on the navbar. Additionally, the user can see their reservations, and create or delete a bike.
 <hr>
 
 
 ## Api
-This app is done with a backend develped by out team.
-[Demo](https://bikes-db.onrender.com) 
-[Source code](https://github.com/AbrahaKahsay/final-capstone-backend) 
+This app is done with a backend developed by our team.
+- [Demo](https://bikes-db.onrender.com) 
+- [Source code](https://github.com/AbrahaKahsay/final-capstone-backend) 
 ## Built With
  ![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+ ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+ ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 -  React.js
+-  Redux
 -  JavaScript
 -  Html
 -  Linters: Eslint
@@ -25,7 +28,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
--  A code editor like Visual Studio Code with Git and Ruby.
+-  A code editor like Visual Studio Code with Git and Node.
 
 You can check if Git is installed by running the following command in the terminal.
 ```
