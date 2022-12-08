@@ -10,11 +10,9 @@ import { fetchModelsAsync } from '../redux/models/models';
 const Reserve = () => {
   const dispatch = useDispatch();
   const locationReact = useLocation()
-  const { id } = locationReact.state || {id: null};
+  const { bikeModel } = locationReact.state || {bikeModel: ''};
   const user = useSelector((state) => state.current_user.user)
   const models = useSelector((state) => state.models);
-  console.log(user);
-  console.log(models);
   useEffect(() => {
     dispatch(fetchModelsAsync());
   }, [dispatch]);
@@ -22,19 +20,28 @@ const Reserve = () => {
   const [start_date, setStartDate] = useState('');
   const [end_date, setEndDate] = useState('');
   const [location, setLocation] = useState('');
-  const [bikeId, setBikeId] = useState('');
+  const [modelName, setModelName] = useState(bikeModel);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const targetBike = models.find((bike) => bike.model === e.target[3].value);
+    const { id } = targetBike;
+
     const formData = {
-      user_id: user.id, bike_id: id || bikeId , start_date, end_date, location,
+      user_id: user.id, bike_id: id, start_date, end_date, location,
     };
     dispatch(addReservation(formData));
+    e.target.reset();
   };
 
   const modelsList = (bikes) => {
     const list = bikes.map((bike) => (
-      <option key={`res-${bike.id}`} value={bike.id}>{ bike.model }</option>
+      <option
+        key={`res-${bike.id}`}
+      >
+        { bike.model }
+      </option>
     ));
     return list;
   }
@@ -69,25 +76,19 @@ const Reserve = () => {
             onChange={(e) => { setEndDate(e.target.value); }}
           />
         </div>
-        {id ?
-          <input className='reserve-btn' type="submit" value="Add Reservation" />
-          :
-          <>
-            <div>
-              <label>Bike Model</label>
-              <input list="models"
-                name="models"
-                id="list-cont"
-                value = {bikeId}
-                onChange={(e) => { setBikeId(e.target.value); }}
-              />
-                <datalist id="models">
-                  { modelsList(models) }
-                </datalist>
-            </div>
-            <input className='reserve-btn' type="submit" value="Add Reservation" />
-          </>
-        }
+        <div>
+          <label>Bike:</label>
+          <input list="models"
+            name="models"
+            id="list-cont"
+            value ={modelName}
+            onChange={(e) => { setModelName(e.target.value); }}
+          />
+            <datalist id="models">
+              { modelsList(models) }
+            </datalist>
+        </div>
+        <input className='reserve-btn' type="submit" value="Add Reservation" />
       </form>
     </div>
   );
