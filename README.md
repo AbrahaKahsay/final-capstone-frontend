@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Final Capstone Front-end
+This is the front end of the final capstone.
+The user can singup or login. then it will be redirected to the home page afte a succesfull login. The user can the See all the models of bikes in the page. after clicking them te user can add a reservasion to a specific bike and if the useer want to add a reservasion without going through this procces it can be done by a link on the navbar. LIkewise the user can see its reservasions create and delete a bike
+<hr>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Api
+This app is done with a backend develped by out team.
+[Demo](https://bikes-db.onrender.com) 
+[Source code](https://github.com/AbrahaKahsay/final-capstone-backend) 
+## Built With
+ ![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+-  React.js
+-  JavaScript
+-  Html
+-  Linters: Eslint
+-  Linters: [Stylent](https://stylelint.io/)
+-  Visual Studio Code (code editor)
+<hr>
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+To get a local copy up and running follow these simple steps.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-  A code editor like Visual Studio Code with Git and Ruby.
 
-### `npm test`
+You can check if Git is installed by running the following command in the terminal.
+```
+$ git --version
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Likewise for node installation.
+```
+$ node --version
+```
 
-### `npm run build`
+### Install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    In the terminal, navigate to where you wish the repo to be located and run these commands.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+$ git clone https://github.com/AbrahaKahsay/final-capstone-frontend.git
+```
+```
+$ cd final-capstone-backend
+```
+```
+$ npm install
+```
+```
+$ npm start
+```
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+👤 **Abraha Kahsay**
 
-### `npm run eject`
+- GitHub: [@AbrahaKahsay](https://github.com/AbrahaKahsay)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+👤 **Alejandro Torres**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- GitHub: [@aizjicod](https://github.com/aizjicod)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+👤 **Jesús Vázquez**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- GitHub: [@jevazquezb](https://github.com/jevazquezb)
 
-## Learn More
+👤 **Lucas Costa Rodrigues**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- GitHub: [@lucas-crodrigues](https://github.com/lucas-crodrigues)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Twitter: [@lcrodrigues58](https://twitter.com/lcrodrigues58)
 
-### Code Splitting
+- LinkedIn: [Lucas Costa Rodrigues](https://www.linkedin.com/in/lucascostarodrigues/)
+<hr>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🤝 Contributing
 
-### Analyzing the Bundle Size
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Feel free to check the [issues page](../../issues/).
+<hr>
 
-### Making a Progressive Web App
+## Show your support
+Give a ⭐️ if you like this project!
+<hr>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Acknowledgments
 
-### Advanced Configuration
+- [Microverse](https://github.com/microverseinc) team.
+- Coding Partners.
+- Code Reviewers.
+<hr>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📝 License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is [MIT](./LICENSE) licensed.
