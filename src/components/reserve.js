@@ -35,6 +35,13 @@ const Reserve = () => {
     e.target.reset();
   };
 
+  const resetForm = () => {
+    setStartDate('');
+    setEndDate('');
+    setLocation('');
+    setModelName('');
+  };
+
   const modelsList = (bikes) => {
     const list = bikes.map((bike) => (
       <option
@@ -49,7 +56,10 @@ const Reserve = () => {
   return (
     <div className='form-container'>
       <h1 className='tit-form'>RESERVE A BIKE</h1>
-      <form className='res-form' onSubmit={handleSubmit}>
+      <form className='res-form'
+        onSubmit={handleSubmit}
+        onReset={resetForm}
+      >
         <div>
           <label>Location</label>
           <input
@@ -88,7 +98,9 @@ const Reserve = () => {
               { modelsList(models) }
             </datalist>
         </div>
-        <input className='reserve-btn' type="submit" value="Add Reservation" />
+        <div className="res-btn-cont">
+          <input className='reserve-btn' type="submit" value="Add Reservation" />
+        </div> 
       </form>
     </div>
   );

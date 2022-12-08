@@ -120,6 +120,15 @@
     font-size: 1rem;
   }
 
+  .link:hover {
+    background-color: #8eaf1a;
+    color: white;
+  }
+
+  .logout:hover {
+    background-color: #ffaa30;
+  }
+
   .link.active {
     color: #fff;
     background-color: #8eaf1a;
