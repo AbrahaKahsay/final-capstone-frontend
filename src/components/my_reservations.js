@@ -21,7 +21,7 @@ function MyReservations() {
 
   return (
     <div className="res-container">
-      <div className="title"><h1>My Reservations</h1></div>
+      <div className="title"><h1 className="res-title">My Reservations</h1></div>
 
       {reservations.length !== 0 ? reservations.map((reservation) => {
         const bike = bikes.find((bike) => bike.id === reservation.bike_id);
@@ -70,7 +70,7 @@ function MyReservations() {
           </div>
         );
       })
-        : <h2>No reservations</h2>}
+        : <h2 className="no-reservations">No reservations</h2>}
     </div>
   );
 }
