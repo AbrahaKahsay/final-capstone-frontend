@@ -74,7 +74,7 @@ function Form() {
           type="number"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
-          placeholder="Price $"
+          placeholder="Price $ per day"
         />
         <textarea
           className="bike-input"

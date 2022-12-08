@@ -38,7 +38,7 @@ function Info({ details }) {
         </li>
         <li className="feature-item">
           <span>Price</span>
-          <span>{`$${price}`}</span>
+          <span>{`$${price} /day`}</span>
         </li>
         <li className="feature-item">
           <span>Duration</span>
