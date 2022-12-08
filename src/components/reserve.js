@@ -41,7 +41,8 @@ const Reserve = () => {
 
   return (
     <div className='form-container'>
-      <form onSubmit={handleSubmit}>
+      <h1 className='tit-form'>RESERVE A BIKE</h1>
+      <form className='res-form' onSubmit={handleSubmit}>
         <div>
           <label>Location</label>
           <input
@@ -73,7 +74,7 @@ const Reserve = () => {
           :
           <>
             <div>
-              <label>Bike:</label>
+              <label>Bike Model</label>
               <input list="models"
                 name="models"
                 id="list-cont"
