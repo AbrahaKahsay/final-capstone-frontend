@@ -76,13 +76,11 @@
 }
 
 @media screen and (max-width: 768px) {
- 
   .res-container {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     padding: 3%;
-    margin-left: 0 5px;
   }
 
   .card {
@@ -94,26 +92,25 @@
     border-radius: 5px;
     margin: 10px 0;
     padding: 0;
-    
   }
 
   .bike-cont {
     height: 100px;
     width: 120px;
   }
-  
+
   .bike-photo {
     max-width: 100%;
     max-height: 100%;
     margin: auto;
     display: block;
   }
-  
+
   .bike-info {
     display: flex;
     flex-direction: column;
   }
-  
+
   .bike-info h2 {
     margin: 4px 0;
   }
