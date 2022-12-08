@@ -83,3 +83,18 @@ form input {
   font-weight: 700;
   font-size: large;
 }
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    padding: 2%;
+  }
+
+  form > div {
+    width: 100%;
+    padding-left: 6px;
+  }
+
+  .reserve-btn {
+    margin-left: 6px;
+  }
+}
