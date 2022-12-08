@@ -43,7 +43,6 @@ export const addReservation = (formData) => async (dispatch) => {
 
 // delete specific reservation
 export const removeReservations = (data) => async (dispatch) => {
-  console.log(data);
   await fetch(`${url(data.user_id)}/${data.id}`, {
     method: 'DELETE',
     headers: {
