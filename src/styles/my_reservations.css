@@ -20,10 +20,10 @@
 }
 
 .card {
-  width: 80%;
+  width: 60%;
   height: 150px;
   border: 0.5px solid rgb(185, 182, 182);
-  padding: 1rem;
+  padding: 1rem 2rem;
   margin: 8px 50px;
   display: flex;
   justify-content: space-between;
@@ -66,4 +66,10 @@
 
 .delete-btn:hover {
   background-color: #df4759;
+  cursor: pointer;
+}
+
+.title {
+  margin: 15px 0;
+  font-family: 'Montserrat', sans-serif;
 }
