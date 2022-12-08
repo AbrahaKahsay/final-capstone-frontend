@@ -60,7 +60,7 @@ form input {
 }
 
 .reserve-btn {
-  width: 20%;
+  width: max-content;
   border-radius: 15px;
   outline: none;
   border: none;
@@ -69,6 +69,13 @@ form input {
   color: rgba(151, 191, 1);
   font-weight: 600;
   background-color: white;
+  padding: 12px 18px;
+}
+
+.reserve-btn:hover {
+  background-color: rgb(26, 168, 7);
+  cursor: pointer;
+  color: white;
 }
 
 .tit-form {
@@ -76,4 +83,19 @@ form input {
   color: aliceblue;
   font-weight: 700;
   font-size: large;
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    padding: 2%;
+  }
+
+  form > div {
+    width: 100%;
+    padding-left: 6px;
+  }
+
+  .reserve-btn {
+    margin-left: 6px;
+  }
 }
