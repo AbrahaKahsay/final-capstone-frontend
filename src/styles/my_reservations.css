@@ -24,9 +24,9 @@
   height: 150px;
   border: 0.5px solid rgb(185, 182, 182);
   padding: 1rem;
-  margin: 8px;
+  margin: 8px 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   border-radius: 5px;
 }
 
@@ -49,4 +49,21 @@
 
 .bike-info h2 {
   margin: 4px 0;
+}
+
+.delete-btn {
+  margin: 6px 0;
+  background-color: rgb(151, 191, 1);
+  color: white;
+  font-size: medium;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  border-radius: 10px;
+  border: none;
+  width: auto;
+  transition-duration: 0.4s;
+}
+
+.delete-btn:hover {
+  background-color: #df4759;
 }
