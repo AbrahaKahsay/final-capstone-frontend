@@ -53,7 +53,7 @@ function Form() {
           type="text"
           value={photo}
           onChange={(e) => setPhoto(e.target.value)}
-          placeholder="URL or upload a picture"
+          placeholder="Image URL"
         />
         <input
           className="bike-input"
