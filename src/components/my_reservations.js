@@ -22,7 +22,7 @@ function MyReservations() {
 
   return (
     <div className="res-container">
-      <h1>My Reservations</h1>
+      <div className="title"><h1>My Reservations</h1></div>
 
       {reservations.length !== 0 ? reservations.map((reservation) => {
         const bike = bikes.find((bike) => bike.id === reservation.bike_id);
@@ -54,7 +54,7 @@ function MyReservations() {
                 {moment(reservation.end_date).utc().format('YYYY-MM-DD')}
               </h2>
               <div className="delete-reservation">
-                <button type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
+                <button className="delete-btn" type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
               </div>
             </div>
             <div className="bike-cont">
