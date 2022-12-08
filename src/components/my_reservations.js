@@ -31,22 +31,26 @@ function MyReservations() {
             <div className="bike-info">
               <h2>
                 City:
+                <span>{' '}</span>
                 {reservation.location}
               </h2>
               {bike
                 ? (
                   <h2>
                     Bike Model:
+                    <span>{' '}</span>
                     {bike.model}
                   </h2>
                 )
                 : <p /> }
               <h2>
                 Start Date:
+                <span>{' '}</span>
                 {moment(reservation.start_date).utc().format('YYYY-MM-DD')}
               </h2>
               <h2>
                 End Date:
+                <span>{' '}</span>
                 {moment(reservation.end_date).utc().format('YYYY-MM-DD')}
               </h2>
               <div className="delete-reservation">
