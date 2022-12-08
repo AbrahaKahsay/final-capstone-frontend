@@ -74,9 +74,9 @@ function ExtraInfo() {
   );
 }
 
-function ReserveLink({ bikeId }) {
+function ReserveLink({ bikeModel }) {
   return (
-    <Link className="res-btn" to="/home/reserve" state={{ id: bikeId }}>
+    <Link className="res-btn" to="/home/reserve" state={{ bikeModel }}>
       <Icon
         className="bike-icon"
         color="#fff"
@@ -122,7 +122,7 @@ function ModelDetails() {
           key={details.id}
         />
         <ExtraInfo />
-        <ReserveLink bikeId={+id} />
+        <ReserveLink bikeModel={model || ''} />
       </section>
     </div>
   );
@@ -139,7 +139,7 @@ Info.propTypes = {
   }).isRequired,
 };
 ReserveLink.propTypes = {
-  bikeId: PropTypes.number.isRequired,
+  bikeModel: PropTypes.string.isRequired,
 };
 
 export default ModelDetails;
