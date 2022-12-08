@@ -7,7 +7,7 @@ The user can signup or login, then it will be redirected to the home page after 
 
 ## Api
 This app is done with a backend developed by our team.
-- [Demo](https://bikes-db.onrender.com) 
+- [Demo](https://bikes-db.onrender.com/api-docs/index.html) 
 - [Source code](https://github.com/AbrahaKahsay/final-capstone-backend) 
 ## Built With
  ![VSCode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
