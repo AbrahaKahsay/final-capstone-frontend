@@ -27,10 +27,11 @@
   margin: 8px 50px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border-radius: 5px;
 }
 
-.bike {
+.bike-cont {
   height: 104px;
   width: 140px;
 }
@@ -72,4 +73,48 @@
 .title {
   margin: 15px 0;
   font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+ 
+  .res-container {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 3%;
+    margin-left: 0 5px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    border: 0.5px solid rgb(185, 182, 182);
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 0;
+    
+  }
+
+  .bike-cont {
+    height: 100px;
+    width: 120px;
+  }
+  
+  .bike-photo {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+  }
+  
+  .bike-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .bike-info h2 {
+    margin: 4px 0;
+  }
 }
