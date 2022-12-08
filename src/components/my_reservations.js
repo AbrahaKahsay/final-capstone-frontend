@@ -53,9 +53,6 @@ function MyReservations() {
                 <span>{' '}</span>
                 {moment(reservation.end_date).utc().format('YYYY-MM-DD')}
               </h2>
-              <div className="delete-reservation">
-                <button className="delete-btn" type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
-              </div>
             </div>
             <div className="bike-cont">
               {bike
@@ -67,6 +64,9 @@ function MyReservations() {
                   />
                 )
                 : <p /> }
+            </div>
+            <div className="delete-reservation">
+              <button className="delete-btn" type="button" onClick={() => handleDelete(reservation.id)}>Delete</button>
             </div>
           </div>
         );
