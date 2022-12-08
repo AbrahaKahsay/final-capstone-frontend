@@ -22,7 +22,31 @@
 .card {
   width: 80%;
   height: 150px;
-  border: 1px solid rgb(185, 182, 182);
+  border: 0.5px solid rgb(185, 182, 182);
   padding: 1rem;
   margin: 8px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+.bike {
+  height: 104px;
+  width: 140px;
+}
+
+.bike-photo {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+}
+
+.bike-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.bike-info h2 {
+  margin: 4px 0;
 }
