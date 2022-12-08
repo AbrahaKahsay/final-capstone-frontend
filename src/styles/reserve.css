@@ -60,7 +60,7 @@ form input {
 }
 
 .reserve-btn {
-  width: 20%;
+  width: max-content;
   border-radius: 15px;
   outline: none;
   border: none;
@@ -69,6 +69,7 @@ form input {
   color: rgba(151, 191, 1);
   font-weight: 600;
   background-color: white;
+  padding: 12px 18px;
 }
 
 .reserve-btn:hover {
