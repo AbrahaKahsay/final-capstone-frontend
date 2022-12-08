@@ -22,11 +22,9 @@
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.2;
-  background-image: url('https://wlassets.vespa.com/wlassets/vespa/master/range/gts/family_page/2022/hotspot/Vespa_GTS-Classic_hotspot_3000x2000_1/original/Vespa_GTS-Classic_hotspot_3000x2000_1.png?1663852802693');
+  opacity: 0.1;
+  background-image: url('https://images.ctfassets.net/x7j9qwvpvr5s/5Gi60AYlhTtVpsZL28WDki/d2881859b17b558aabc25653850f2f04/SFV4_LAMBO_SPIN_00.png?w=1920&fm=webp&q=95');
   background-repeat: no-repeat;
-
-  /* background-position: 50% 0; */
   background-size: cover;
 }
 
