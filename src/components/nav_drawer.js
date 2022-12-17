@@ -5,7 +5,7 @@ import { NavLink, Link } from 'react-router-dom';
 import '../styles/navdrawer.css';
 import { cleanUser } from '../redux/models/login';
 
-function NavDrawer() {
+const NavDrawer = () => {
   const [showMenu, setShowMenu] = useState(false);
   const dispatch = useDispatch();
 
@@ -102,6 +102,6 @@ function NavDrawer() {
       </div>
     </>
   );
-}
+};
 
 export default NavDrawer;

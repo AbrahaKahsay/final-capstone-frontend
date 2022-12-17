@@ -7,7 +7,7 @@ import {
 } from '../redux/models/models';
 import '../styles/delete_motorcycle.css';
 
-function ModelName({ bike, deleteHandler }) {
+const ModelName = ({ bike, deleteHandler }) => {
   const { id, model } = bike;
 
   return (
@@ -26,9 +26,9 @@ function ModelName({ bike, deleteHandler }) {
       </div>
     </li>
   );
-}
+};
 
-function DeleteMotorcycle() {
+const DeleteMotorcycle = () => {
   const dispatch = useDispatch();
   const bikes = useSelector((state) => state.models);
 
@@ -59,7 +59,7 @@ function DeleteMotorcycle() {
       </ul>
     </div>
   );
-}
+};
 
 ModelName.propTypes = {
   bike: PropTypes.shape({

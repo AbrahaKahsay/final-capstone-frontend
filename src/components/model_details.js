@@ -6,19 +6,17 @@ import { Icon } from '@iconify/react';
 import { fetchDetailsAsync } from '../redux/models/model_details';
 import '../styles/details.css';
 
-function BackToModels() {
-  return (
-    <Link className="back-btn" to="/home/models">
-      <Icon
-        className="back-arrow"
-        color="#fff"
-        icon="eva:arrow-left-outline"
-      />
-    </Link>
-  );
-}
+const BackToModels = () => (
+  <Link className="back-btn" to="/home/models">
+    <Icon
+      className="back-arrow"
+      color="#fff"
+      icon="eva:arrow-left-outline"
+    />
+  </Link>
+);
 
-function Info({ details }) {
+const Info = ({ details }) => {
   const {
     model, power, weight, price,
   } = details;
@@ -47,54 +45,50 @@ function Info({ details }) {
       </ul>
     </>
   );
-}
+};
 
-function ExtraInfo() {
-  return (
-    <>
-      <p className="discount">
-        <span className="disc-bold">5.9% APR </span>
-        Representative
-      </p>
-      <div className="more-models-cont">
-        <p className="more-models">DISCOVER MORE MODELS</p>
-        <Icon
-          className="go-arrow"
-          color="#e6cc00"
-          icon="ic:baseline-keyboard-arrow-right"
-        />
-      </div>
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/BYR_color_wheel.svg/382px-BYR_color_wheel.svg.png"
-        alt="Color wheel"
-        title="Color wheel"
-        className="color-wheel"
-      />
-    </>
-  );
-}
-
-function ReserveLink({ bikeModel }) {
-  return (
-    <Link className="res-btn" to="/home/reserve" state={{ bikeModel }}>
+const ExtraInfo = () => (
+  <>
+    <p className="discount">
+      <span className="disc-bold">5.9% APR </span>
+      Representative
+    </p>
+    <div className="more-models-cont">
+      <p className="more-models">DISCOVER MORE MODELS</p>
       <Icon
-        className="bike-icon"
-        color="#fff"
-        icon="fa6-solid:motorcycle"
+        className="go-arrow"
+        color="#e6cc00"
+        icon="ic:baseline-keyboard-arrow-right"
       />
-      <span>Reserve</span>
-      <div className="res-arr-cont">
-        <Icon
-          className="reserve-arrow"
-          color="#fff"
-          icon="ic:baseline-keyboard-arrow-right"
-        />
-      </div>
-    </Link>
-  );
-}
+    </div>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/BYR_color_wheel.svg/382px-BYR_color_wheel.svg.png"
+      alt="Color wheel"
+      title="Color wheel"
+      className="color-wheel"
+    />
+  </>
+);
 
-function ModelDetails() {
+const ReserveLink = ({ bikeModel }) => (
+  <Link className="res-btn" to="/home/reserve" state={{ bikeModel }}>
+    <Icon
+      className="bike-icon"
+      color="#fff"
+      icon="fa6-solid:motorcycle"
+    />
+    <span>Reserve</span>
+    <div className="res-arr-cont">
+      <Icon
+        className="reserve-arrow"
+        color="#fff"
+        icon="ic:baseline-keyboard-arrow-right"
+      />
+    </div>
+  </Link>
+);
+
+const ModelDetails = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -126,7 +120,7 @@ function ModelDetails() {
       </section>
     </div>
   );
-}
+};
 
 Info.propTypes = {
   details: PropTypes.shape({

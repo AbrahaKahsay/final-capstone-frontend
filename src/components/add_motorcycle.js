@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { addBikeAsync } from '../redux/models/models';
 import '../styles/add_motorcycle.css';
 
-function Form() {
+const Form = () => {
   const [model, setModel] = useState('');
   const [photo, setPhoto] = useState('');
   const [power, setPower] = useState('');
@@ -93,15 +93,13 @@ function Form() {
       </form>
     </>
   );
-}
+};
 
-function AddMotorcycle() {
-  return (
-    <div className="bike-form-cont">
-      <h2 className="models-title">ADD A NEW MODEL</h2>
-      <Form />
-    </div>
-  );
-}
+const AddMotorcycle = () => (
+  <div className="bike-form-cont">
+    <h2 className="models-title">ADD A NEW MODEL</h2>
+    <Form />
+  </div>
+);
 
 export default AddMotorcycle;
