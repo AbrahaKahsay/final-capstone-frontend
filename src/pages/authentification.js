@@ -1,13 +1,11 @@
 import Login from '../components/login';
 import Signin from '../components/singin';
 
-function Authentification() {
-  return (
-    <>
-      <Login />
-      <Signin />
-    </>
-  );
-}
+const Authentification = () => (
+  <>
+    <Login />
+    <Signin />
+  </>
+);
 
 export default Authentification;

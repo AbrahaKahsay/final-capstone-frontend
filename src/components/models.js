@@ -9,7 +9,7 @@ import { Icon } from '@iconify/react';
 import { fetchModelsAsync } from '../redux/models/models';
 import '../styles/models.css';
 
-function Bike({ bike }) {
+const Bike = ({ bike }) => {
   const {
     id, brand, model, photo, description,
   } = bike;
@@ -52,9 +52,9 @@ function Bike({ bike }) {
       </ul>
     </li>
   );
-}
+};
 
-function BikesList() {
+const BikesList = () => {
   const dispatch = useDispatch();
   const bikes = useSelector((state) => state.models);
 
@@ -77,17 +77,15 @@ function BikesList() {
       { createList(bikes) }
     </ul>
   );
-}
+};
 
-function Models() {
-  return (
-    <div className="models-cont">
-      <h1 className="models-title">LATEST MODELS</h1>
-      <p className="model-subtitle">Please select a Ducati Model</p>
-      <BikesList />
-    </div>
-  );
-}
+const Models = () => (
+  <div className="models-cont">
+    <h1 className="models-title">LATEST MODELS</h1>
+    <p className="model-subtitle">Please select a Ducati Model</p>
+    <BikesList />
+  </div>
+);
 
 Bike.propTypes = {
   bike: PropTypes.shape({

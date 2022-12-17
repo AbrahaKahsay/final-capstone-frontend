@@ -5,7 +5,7 @@ import { fetchReservationsFromServer, removeReservations } from '../redux/reserv
 import { fetchModelsAsync } from '../redux/models/models';
 import '../styles/my_reservations.css';
 
-function MyReservations() {
+const MyReservations = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.current_user.user);
   useEffect(() => {
@@ -73,6 +73,6 @@ function MyReservations() {
         : <h2 className="no-reservations">No reservations</h2>}
     </div>
   );
-}
+};
 
 export default MyReservations;
