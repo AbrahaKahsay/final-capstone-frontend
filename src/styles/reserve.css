@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+.form-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 20vh;
+  background-color: rgba(151, 191, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: url('https://images.ctfassets.net/x7j9qwvpvr5s/5Gi60AYlhTtVpsZL28WDki/d2881859b17b558aabc25653850f2f04/SFV4_LAMBO_SPIN_00.png?w=1920&fm=webp&q=95');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.res-form {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 2vh;
+}
+
+form > div {
+  width: 80%;
+}
+
+form > div > label {
+  font-weight: 500;
+  color: aliceblue;
+  font-size: large;
+}
+
+form input {
+  width: 100%;
+  margin: 4px auto;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  padding: 10px 12px;
+}
+
+.res-btn-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.reserve-btn {
+  width: 150px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  color: rgba(151, 191, 1);
+  font-weight: 600;
+  background-color: white;
+  padding: 12px 18px;
+}
+
+.reserve-btn:hover {
+  background-color: rgb(26, 168, 7);
+  cursor: pointer;
+  color: white;
+}
+
+.tit-form {
+  color: aliceblue;
+  font-weight: 700;
+  font-size: large;
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    padding: 2%;
+  }
+
+  form > div {
+    width: 100%;
+    padding-left: 6px;
+  }
+
+  .tit-form {
+    margin-top: 2vh;
+  }
+
+  .res-form {
+    padding: 0 2%;
+  }
+}
