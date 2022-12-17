@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+.models-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 2vh 0 2vh 0;
+}
+
+.model-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #bbb;
+  text-align: center;
+  margin-bottom: 4vh;
+}
+
+.bikes-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.bike-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bike-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+}
+
+.img-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #e2a8a8;
+  z-index: -1;
+}
+
+.img-bike {
+  width: 350px;
+}
+
+.model-name {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.bike-description {
+  margin: 2vh 0;
+  color: #b1b1b1;
+  font-size: 0.8rem;
+  font-weight: bold;
+  width: 300px;
+}
+
+.bike-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #bbb;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.social-cont:hover {
+  cursor: pointer;
+}
+
+.social-mini {
+  width: 10px;
+  height: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .models-cont {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 3%;
+  }
+
+  .bike-description {
+    margin: 2vh 0 1vh 0;
+    width: 350px;
+    min-height: 75px;
+  }
+}

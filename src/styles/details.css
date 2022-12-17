@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+.det-cont {
+  box-sizing: border-box;
+}
+
+.first-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-btn {
+  background-color: #8eaf1a;
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 55px;
+  height: 40px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+.back-arrow {
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+}
+
+.single-bike {
+  width: 90%;
+}
+
+.details-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
+
+.second-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.offer {
+  font-size: 0.6rem;
+  margin: 8px 0 20px 0;
+}
+
+.features {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.feature-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+}
+
+.feature-item:nth-child(odd) {
+  background-color: #d9d9d9;
+}
+
+.discount {
+  font-size: 0.85rem;
+  margin-top: 13px;
+}
+
+.disc-bold {
+  font-weight: bold;
+}
+
+.more-models-cont {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.more-models-cont:hover {
+  cursor: pointer;
+}
+
+.more-models {
+  font-size: 0.7rem;
+  padding-bottom: 0.1rem;
+}
+
+.color-wheel {
+  width: 90px;
+  margin-bottom: 20px;
+}
+
+.res-btn {
+  background-color: #8eaf1a;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  align-items: center;
+  text-decoration: none;
+  width: 160px;
+  height: 40px;
+  padding: 0 10px;
+  border-radius: 24px;
+  font-weight: bold;
+}
+
+.res-arr-cont {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .det-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10% 3% 0 0;
+    gap: 3%;
+  }
+
+  .single-bike {
+    width: 100%;
+    margin-bottom: 5vh;
+  }
+
+  .back-btn {
+    order: 1;
+    width: 70px;
+    height: 55px;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+  }
+
+  .second-info {
+    align-self: stretch;
+    align-items: flex-end;
+    width: 40%;
+  }
+
+  .details-title {
+    font-size: 2.5rem;
+  }
+
+  .offer {
+    font-size: 0.7rem;
+    margin: 10px 0 30px 0;
+  }
+
+  .features {
+    width: 100%;
+  }
+
+  .feature-item {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .discount {
+    align-self: flex-start;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+
+  .more-models-cont {
+    font-weight: bold;
+    margin: 35px 0;
+  }
+
+  .color-wheel {
+    margin: 0 8px 60px 0;
+  }
+
+  .res-btn {
+    height: 55px;
+  }
+}
