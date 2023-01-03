@@ -10,8 +10,8 @@ const NavDrawer = () => {
   const dispatch = useDispatch();
 
   const createLinks = () => {
-    const tags = ['MODELS', 'RESERVE', 'MY RESERVATIONS', 'ADD MOTORCYCLE', 'DELETE MOTORCYCLE'];
-    const addresses = ['/home/models', '/home/reserve', '/home/my-reservations', '/home/add-motorcycle', '/home/delete-motorcycle'];
+    const tags = ['MODELS', 'RESERVE', 'MY RESERVATIONS'];
+    const addresses = ['/home/models', '/home/reserve', '/home/my-reservations'];
     const links = [];
 
     for (let i = 0; i < tags.length; i += 1) {
