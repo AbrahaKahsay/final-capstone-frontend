@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addReservation } from '../redux/reservations/reservations';
 import '../styles/reserve.css'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { fetchModelsAsync } from '../redux/models/models';
 
@@ -21,6 +21,7 @@ const Reserve = () => {
   const [end_date, setEndDate] = useState('');
   const [location, setLocation] = useState('');
   const [modelName, setModelName] = useState(bikeModel);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,6 +34,7 @@ const Reserve = () => {
     };
     dispatch(addReservation(formData));
     e.target.reset();
+    navigate('/home/my-reservations');
   };
 
   const resetForm = () => {
