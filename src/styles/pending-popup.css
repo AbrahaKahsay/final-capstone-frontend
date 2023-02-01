@@ -19,6 +19,7 @@
 }
 
 #pending-popup__content p {
+  font-family: 'Open Sans', sans-serif;
   color: rgba(255, 255, 255, 0.735);
   font-size: 2em;
   font-weight: 900;
@@ -64,7 +65,7 @@
   display: block;
   width: 30px;
   height: 30px;
-  background: rgb(73, 241, 50);
+  background: #8eaf1a;
   border-radius: 100%;
 
   /* use this margin to position the dots */
