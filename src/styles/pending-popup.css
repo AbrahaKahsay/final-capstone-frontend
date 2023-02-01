@@ -59,23 +59,24 @@
   animation-delay: -2s;
 }
 
-#load .dot:after {
+#load .dot::after {
   content: '';
   display: block;
   width: 30px;
   height: 30px;
   background: rgb(73, 241, 50);
   border-radius: 100%;
+
   /* use this margin to position the dots */
   margin: 5px 0 0 5px;
 }
 
 @keyframes load-animation {
-  0%{
+  0% {
     transform: rotate(0deg);
   }
 
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }

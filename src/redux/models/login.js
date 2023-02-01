@@ -82,9 +82,7 @@ const userSlice = createSlice({
       }
       return action.payload;
     },
-    [createUserAsync.pending]: () => {
-      return { ...initialState, status: 'pending' };
-    },
+    [createUserAsync.pending]: () => ({ ...initialState, status: 'pending' }),
   },
 });
 const { actions, reducer } = userSlice;
