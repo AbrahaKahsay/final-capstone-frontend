@@ -11,7 +11,7 @@ const PendingPopup = () => (
         <div className="dot" />
         <div className="dot" />
       </div>
-      <p>this may take a few seconds</p>
+      <p>This may take a few seconds.</p>
     </div>
   </div>
 );
