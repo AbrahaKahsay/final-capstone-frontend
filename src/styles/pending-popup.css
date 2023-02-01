@@ -1,0 +1,74 @@
+#pending-popup {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00110099;
+}
+
+#pending-popup__content {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#load {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+#load .dot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: load-animation 3s infinite linear;
+}
+
+#load .dot:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+#load .dot:nth-child(3) {
+  animation-delay: 1s;
+}
+
+#load .dot:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+#load .dot:nth-child(5) {
+  animation-delay: 2s;
+}
+
+#load .dot:nth-child(6) {
+  animation-delay: 2.1s;
+}
+
+#load .dot:after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: rgb(73, 241, 50);
+  border-radius: 100%;
+  /* use this margin to position the dots */
+  margin: 5px 0 0 5px;
+}
+
+@keyframes load-animation {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}
