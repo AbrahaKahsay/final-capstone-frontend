@@ -71,16 +71,18 @@ const userSlice = createSlice({
   extraReducers: {
     [findUserAsync.fulfilled]: (state, action) => {
       if (action.payload.error) {
-        return { ...state, ...action.payload };
+        return { ...initialState, ...action.payload };
       }
       return action.payload;
     },
+    [findUserAsync.pending]: () => ({ ...initialState, status: 'pending' }),
     [createUserAsync.fulfilled]: (state, action) => {
       if (action.payload.error) {
-        return { ...state, ...action.payload };
+        return { ...initialState, ...action.payload };
       }
       return action.payload;
     },
+    [createUserAsync.pending]: () => ({ ...initialState, status: 'pending' }),
   },
 });
 const { actions, reducer } = userSlice;

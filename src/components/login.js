@@ -55,6 +55,7 @@ const Login = () => {
             <span className="screen__background__shape screen__background__shape2" />
             <span className="screen__background__shape screen__background__shape1" />
           </div>
+          <></>
           <div id="error-msg" className={currentUser.error ? '' : 'inactive'}>{currentUser.error}</div>
         </div>
       </div>
