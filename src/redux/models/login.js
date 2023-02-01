@@ -75,15 +75,15 @@ const userSlice = createSlice({
       }
       return action.payload;
     },
-    [findUserAsync.pending]: () => {
-      console.log('Pending.....');
-      return { ...initialState, status: 'pending' };
-    },
+    [findUserAsync.pending]: () => ({ ...initialState, status: 'pending' }),
     [createUserAsync.fulfilled]: (state, action) => {
       if (action.payload.error) {
-        return { ...state, ...action.payload };
+        return { ...initialState, ...action.payload };
       }
       return action.payload;
+    },
+    [createUserAsync.pending]: () => {
+      return { ...initialState, status: 'pending' };
     },
   },
 });
