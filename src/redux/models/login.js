@@ -19,7 +19,7 @@ const FIND_USER = 'final_capstone_frontend/models/FIND_USER';
 const CREATE_USER = 'final_capstone_frontend/models/CREATE_USER';
 
 // URL
-const URL = 'https://bikes-db.onrender.com/api/v1';
+const URL = 'https://ducati-rentals-3bu2.onrender.com/api/v1';
 // Async function (Function Action Creator)
 const findUserAsync = createAsyncThunk(
   FIND_USER,

@@ -6,7 +6,7 @@ const ADD_BIKE_MODEL = 'final_capstone_frontend/models/ADD_BIKE_MODEL';
 const DELETE_BIKE_MODEL = 'final_capstone_frontend/models/DELETE_BIKE_MODEL';
 
 // URL
-const modelsURL = 'https://bikes-db.onrender.com/api/v1/bikes';
+const modelsURL = 'https://ducati-rentals-3bu2.onrender.com/api/v1/bikes';
 
 // Async function (Function Action Creator)
 const fetchModelsAsync = createAsyncThunk(
